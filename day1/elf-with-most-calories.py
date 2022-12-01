@@ -1,3 +1,4 @@
+#how much calories does the elf with the most calories have
 import numpy as np
 def mostcalories():
 	with open('input', 'r') as f:
