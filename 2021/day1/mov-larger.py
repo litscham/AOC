@@ -1,4 +1,4 @@
-#how much calories does the elf with the most calories have
+#Consider sums of a three-measurement sliding window. How many sums are larger than the previous sum?
 import numpy as np
 def diffchecker():
 	with open('input', 'r') as f:

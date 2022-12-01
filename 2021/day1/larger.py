@@ -1,4 +1,4 @@
-#how much calories does the elf with the most calories have
+#How many measurements are larger than the previous measurement?
 import numpy as np
 def diffchecker():
 	with open('input', 'r') as f:
@@ -10,8 +10,4 @@ def diffchecker():
 			frame.append(np.fromstring(values[i],dtype=int,sep=","))					
 		diffs = np.diff(frame)
 		print(np.sum(diffs > 0))
-		#summe=[]		
-		#for i in range(len(food)):
-		#	summe.append(np.sum(food[i]))		
-		#print(np.max(summe))
 diffchecker()
