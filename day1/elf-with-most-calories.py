@@ -6,9 +6,7 @@ def mostcalories():
 		elfs = [s.replace('\n', ',') for s in elfs]
 		food=[]		
 		for i in range(len(elfs)):		
-			food.append(np.fromstring(elfs[i],dtype=int,sep=","))		
-		#lines = [line.split('\n')[0] for line in f]		
-		#Elfs=np.genfromtxt(lines,dtype=int,delimiter="\n\n")				
+			food.append(np.fromstring(elfs[i],dtype=int,sep=","))					
 		summe=[]		
 		for i in range(len(food)):
 			summe.append(np.sum(food[i]))		
