@@ -4,7 +4,7 @@
 #C & Z = Scissor = 3 Point
 #Win = 6 Points
 #Draw = 3 Points
-#Loose = 1 Point
+#Loose = 0 Point
 import numpy as np
 def rpsscore():
 	score = 0
