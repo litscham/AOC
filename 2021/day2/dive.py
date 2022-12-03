@@ -1,4 +1,4 @@
-#How many measurements are larger than the previous measurement?
+#What's the end position
 import numpy as np
 import re
 def endpoint():
@@ -6,7 +6,14 @@ def endpoint():
 		lines = f.read()
 		values = lines.split("\n")
 		directions = [re.split(r'(\d+)', s)[0:2] for s in values]
-		for item in directions:
-			if item[i] == 'Forward':
-				Forward = item[]
+		forward = 0
+		depth = 0
+		for i in range(len(directions)-1):
+			if directions[i][0] in ['forward']:
+				forward = forward + directions[i][1]
+			elif directions[i][0] == 'down':
+				depth = depth + directions[i][1]
+			elif directions[i][0] == 'up':
+				depth = depth - directions[i][1]
+		print(forward)
 endpoint()
