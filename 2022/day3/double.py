@@ -12,11 +12,7 @@ def double():
 		#parse input			
 		lines = f.read()
 		lines = lines.split("\n")
-		del(lines[-1])
-		#lines = [s.replace(' ', '') for s in lines]				
-		'''print(lines[0][0:int(len(lines[0])/2)])
-		print(lines[0][int(len(lines[0])/2):])
-		print(lines[0])'''	
+		del(lines[-1])				
 		first = []
 		second = []
 		for e in range(len(lines)):
