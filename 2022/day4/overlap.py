@@ -20,26 +20,6 @@ def overlap():
 			elif len(set(a) & set(b)) == len(set(b)):
 				summe = summe + 1
 			else:
-				pass
-		#start e1[i][0] end e1[i][1]
-		#check if len() from set(a) & set(b) == set(a) or set(a) & set(b) == set(b)		
-		'''del(lines[-1])				
-		first = []
-		second = []
-		for e in range(len(lines)):
-			first.append(lines[e][0:int(len(lines[e])/2)])
-			second.append(lines[e][int(len(lines[e])/2):])
-		comp1 = []
-		comp2 = []
-		for i in range(len(first)):
-			comp1.append(list(first[i]))
-			comp2.append(list(second[i]))
-		common = []
-		for i in range(len(comp1)):
-			common.append(list(set(comp1[i]) & set(comp2[i])))
-		common=sum(common,[])
-		summe = 0		
-		for i in range(len(common)):
-			summe = summe +	prio_dict[common[i]]'''		
+				pass	
 		print(summe)
 overlap()
