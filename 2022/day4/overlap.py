@@ -14,7 +14,6 @@ def overlap():
 		for i in range(len(e1)):
 			a = np.arange(int(e1[i][0]),int(e1[i][1])+1)
 			b = np.arange(int(e2[i][0]),int(e2[i][1])+1)
-			print(len(set(a) & set(b)) , len(set(a)) ,len(set(b)))
 			if len(set(a) & set(b)) == len(set(a)):
 				summe = summe + 1
 			elif len(set(a) & set(b)) == len(set(b)):
