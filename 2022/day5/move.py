@@ -1,8 +1,9 @@
 #lines 0-6 are creates
 #line 7 is index of creates
 #lines 7: are instructions 'move #creates from source index to destination index 
-
+#index 0 = number of creates, 1 = destination, 2 = source 
 #move_create = creates.pop(instructions[0])[-1]
+import numpy as np
 creates = {	1:'RPCDBG',
 		2:'HVG',
 		3:'NSQDJPM',
@@ -13,14 +14,16 @@ creates = {	1:'RPCDBG',
 		8:'CMDBF',
 		9:'FCQG'		
 	}
-with open('input','r') as instructions:
-	print(instructions.readlines().pop(0))#.split("\n")#.replace("move","from","to")#
-'''data = open("input", "r").read().replace("-",",").split("\n")
-total = 0
-for i in data:
-    p1, p2, p3, p4 = map(int, i.split(","))
-    
-    if p1 >= p3 and p2 <= p4: total += 1 #left inside right
-    elif p1 <= p3 and p2 >= p4: total += 1 #right inside left
-'''
-	
+with open('input.txt','r') as f:
+    instructions = f.readlines()[10:]
+    instructions = [s.replace("move ","").replace("from ","").replace("to ", "").replace("\n","").split(' ') for s in instructions]
+    for i in np.arange(len(instructions)):
+        j = 0
+        if j < int(instructions[i][0])+1:
+            creates[int(instructions[i][2])] += creates.get(int(instructions[i][1]))[-1]
+            creates.update({int(instructions[i][1]): creates.pop(int(instructions[i][1]))[:-1]})
+            j = j+1
+    #creates.update({int(instructions[0][2]): creates.pop(int(instructions[0][1]))[-1]})
+    print(creates)
+    #move instruction[i][0] creates from instruction[i][1] to instruction[i][2]
+
