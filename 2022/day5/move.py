@@ -14,16 +14,17 @@ creates = {	1:'RPCDBG',
 		8:'CMDBF',
 		9:'FCQG'		
 	}
-with open('input.txt','r') as f:
+with open('input','r') as f:
     instructions = f.readlines()[10:]
     instructions = [s.replace("move ","").replace("from ","").replace("to ", "").replace("\n","").split(' ') for s in instructions]
     for i in np.arange(len(instructions)):
         j = 0
-        if j < int(instructions[i][0])+1:
-            creates[int(instructions[i][2])] += creates.get(int(instructions[i][1]))[-1]
-            creates.update({int(instructions[i][1]): creates.pop(int(instructions[i][1]))[:-1]})
-            j = j+1
+        while j < int(instructions[i][0]):
+            	creates[int(instructions[i][2])] += creates.get(int(instructions[i][1]))[-1]
+            	creates.update({int(instructions[i][1]): creates.pop(int(instructions[i][1]))[:-1]})
+            	j += 1
+for key in creates.keys():
+	print(creates.get(key)[-1])
     #creates.update({int(instructions[0][2]): creates.pop(int(instructions[0][1]))[-1]})
-    print(creates)
     #move instruction[i][0] creates from instruction[i][1] to instruction[i][2]
 
