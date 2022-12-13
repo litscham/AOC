@@ -6,5 +6,5 @@ def find_dub():
 			q = s[i:i+4]
 			x = set(q)
 			if len(q) == len(x):
-				return s.index(q)
+				return s.index(q)+4
 print(find_dub())
