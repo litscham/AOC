@@ -1,0 +1,27 @@
+import numpy as np
+
+def overlap():
+    with open('input', 'r') as f:
+        #parse input
+        lines = f.read().split('\n')[:-1]
+        lines = [i.split(',') for i in lines]
+        e1 = []
+        e2 = []
+        for i in range(len(lines)):
+            e1.append(lines[i][0].split('-'))
+            e2.append(lines[i][1].split('-'))
+        summe = 0
+        for i in range(len(e1)):
+            a = np.arange(int(e1[i][0]),int(e1[i][1])+1)
+            b = np.arange(int(e2[i][0]),int(e2[i][1])+1)
+            if len(set(a) & set(b)) == len(set(a)):
+                summe += 1
+            elif len(set(a) & set(b)) == len(set(b)):
+                summe += 1
+            else:
+                overlap = len(set(a) & set(b))
+                if overlap > 0:
+                    summe += 1
+        print(summe)
+
+overlap()
